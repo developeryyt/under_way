@@ -1,9 +1,10 @@
 
 
 const NowLocation = async () => {
-    const result = await fetch(`http://swopenapi.seoul.go.kr/api/subway/5653466f4e7965743433734c48504e/json/realtimeStationArrival/0/5/서울`);
+    const result = await fetch(`${process.env.NEXT_PUBLIC_SUBWAY_API_ADDRESS}/api/subway/${process.env.NEXT_PUBLIC_OPENAPI_SUBWAY_KEY}/json/realtimeStationArrival/0/5/서울`);
     const data = await result.json();
 
+    console.log(data)
 
     return (
         <div></div>
