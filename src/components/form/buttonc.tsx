@@ -1,21 +1,21 @@
 'use client';
-import styles from './buttonc.module.scss';
 
 interface ButtoncProps {
     text?: string;
     onClick: () => void;
     type: 'button' | 'submit' | 'reset';
+    className?: string;
 }
 
 
-const Buttonc = ({ text, onClick, type }: ButtoncProps) => {
+const Buttonc = ({ text, onClick, type, className = '' }: ButtoncProps) => {
 
 
     return (
         <button
             onClick={onClick}
             type={type}
-            className={styles?.['btn']}
+            className={`btn ${className}`}
         >{text}</button>
     );
 };

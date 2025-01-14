@@ -1,0 +1,52 @@
+@import '@/styles/variables';
+
+.custom_select {
+  position: relative;
+  box-sizing: border-box;
+  
+  .selected {
+    button {
+      border: 2px solid $gray;
+      border-radius: 8px;
+      min-height: 32px;
+      padding: 0 12px;
+      font-size: 14px;
+      text-align: center;
+      color: $gray2;
+
+      &.line_1 { border-color: $line1; }
+      &.line_2 { border-color: $line2; }
+      &.line_3 { border-color: $line3; }
+      &.line_4 { border-color: $line4; }
+      &.line_5 { border-color: $line5; }
+      &.line_6 { border-color: $line6; }
+      &.line_7 { border-color: $line7; }
+      &.line_8 { border-color: $line8; }
+      &.line_9 { border-color: $line9; }
+
+    }
+  }
+
+  ul.select_list {
+    border-radius: 8px;
+    border: 1px solid $gray;
+    box-sizing: border-box;
+
+    > li {
+      padding: 4px 0;
+      _border: 1px solid red;
+      border-bottom: 1px solid $gray;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      button {
+        text-align: center;
+        padding: 4px 0;
+        min-height: auto;
+      }
+    }
+  }
+}
+

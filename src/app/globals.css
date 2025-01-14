@@ -18,6 +18,9 @@ html, body {
     box-sizing: border-box;
 }
 
+ul, li {
+    list-style: none;
+}
 
 button {
     padding: 0;
