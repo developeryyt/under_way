@@ -1,0 +1,21 @@
+.btn_mylocation {
+  font-size: 0;
+  text-align: right;
+
+  .text {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+  }
+}
+
+.icons {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 8px;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
