@@ -31,3 +31,26 @@ export interface SubwayInfo {
     "arvlCd": string,
     "lstcarAt": string;
 }
+
+
+/*
+* lnCd	선코드
+* mreaWideCd	권역코드
+* railOprIsttCd	철도운영기관코드
+* routCd	노선코드
+* routNm	노선명
+* stinCd	역코드
+* stinConsOrdr	역구성순서
+* stinNm	역명
+* */
+
+export interface SubwayLine {
+    "mreaWideCd": string,
+    "routCd": string,
+    "routNm": string,
+    "stinConsOrdr": number,
+    "railOprIsttCd": string,
+    "lnCd": string,
+    "stinCd": string,
+    "stinNm": string
+}
