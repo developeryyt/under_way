@@ -1,6 +1,7 @@
 import Mylocation from "@/components/mylocation";
 import styles from './header.module.scss'
 import Link from "next/link";
+import Themebtn from "@/components/common/themebtn";
 
 const Header = () => {
 
@@ -10,7 +11,10 @@ const Header = () => {
                 <h1>
                     <Link href='/'>LOGO</Link>
                 </h1>
-                <Mylocation/>
+                <div className={styles['util_box']}>
+                    <Themebtn />
+                    <Mylocation/>
+                </div>
             </div>
         </header>
     );
