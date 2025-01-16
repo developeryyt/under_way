@@ -32,7 +32,6 @@ export interface SubwayInfo {
     "lstcarAt": string;
 }
 
-
 /*
 * lnCd	선코드
 * mreaWideCd	권역코드
@@ -53,4 +52,31 @@ export interface SubwayLine {
     "lnCd": string,
     "stinCd": string,
     "stinNm": string
+}
+
+
+export enum LineCode {
+    D1 = 'D1',
+    A1 = 'A1',
+    E1 = 'E1',
+    G1 = 'G1',
+    I1 = 'I1',
+    I2 = 'I2',
+    K1 = 'K1',
+    K2 = 'K2',
+    K4 = 'K4',
+    K5 = 'K5',
+    L1 = 'L1',
+    WS = 'WS',
+    UI = 'UI',
+    U1 = 'U1',
+    S1 = 1,
+    S2 = 2,
+    S3 = 3,
+    S4 = 4,
+    S5 = 5,
+    S6 = 6,
+    S7 = 7,
+    S8 = 8,
+    S9 = 9,
 }

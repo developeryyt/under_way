@@ -10,6 +10,16 @@ html, body {
 
 .layout {
     height: 100%;
+    background-color: #fff;
+    transition: all 250ms;
+}
+
+.layout.dark {
+    background-color: #323235;
+}
+
+.layout.dark * {
+    color: #f3f3f3 !important;
 }
 
 .inner {
