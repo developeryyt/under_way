@@ -27,7 +27,16 @@
     }
   }
 
+  .list_wrapper {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    width: 100%;
+  }
+
   ul.select_list {
+    overflow-y: auto;
+    max-height: 215px;
     border-radius: 8px;
     border: 1px solid $gray;
     box-sizing: border-box;

@@ -1,5 +1,6 @@
 import Subway from "@/components/subway";
 import Selectc from "@/components/form/selectc";
+import Info from "@/components/info";
 
 
 // async function GetSubWayTotal() {
@@ -20,10 +21,11 @@ import Selectc from "@/components/form/selectc";
 const page = () => {
 
 
+
     return (
         <>
-            <Subway />
-            <Selectc />
+            {/*<Subway />*/}
+            <Info />
         </>
     );
 };

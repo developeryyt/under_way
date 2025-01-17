@@ -23,29 +23,31 @@ const SelectC = () => {
                     className={line === arr[line - 1] ? styles[`line_${line}`] : ''}
                 />
             </div>
-            <ul
-                className={styles?.['select_list']}
-                style={{
-                    display: open ? 'block' : 'none'
-                }}
-            >
-                {arr.map((item) => {
-                    return (
-                        <li
-                            key={`customize_select_${item}`}
-                        >
-                            <Buttonc
-                                onClick={() => {
-                                    setLine(item)
-                                    setOpen(false)
-                                }}
-                                type='button'
-                                text={`${item.toString()} 호선`}
-                            />
-                        </li>
-                    )
-                })}
-            </ul>
+            <div className={styles?.['list_wrapper']}>
+                <ul
+                    className={styles?.['select_list']}
+                    style={{
+                        display: open ? 'block' : 'none'
+                    }}
+                >
+                    {arr.map((item) => {
+                        return (
+                            <li
+                                key={`customize_select_${item}`}
+                            >
+                                <Buttonc
+                                    onClick={() => {
+                                        setLine(item)
+                                        setOpen(false)
+                                    }}
+                                    type='button'
+                                    text={`${item.toString()} 호선`}
+                                />
+                            </li>
+                        )
+                    })}
+                </ul>
+            </div>
         </div>
     )
 }
