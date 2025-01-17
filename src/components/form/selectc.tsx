@@ -2,12 +2,15 @@
 import Buttonc from "@/components/form/buttonc";
 import styles from './selectc.module.scss';
 import {useState} from "react";
+import {LineCode} from "@/types";
 
-const SelectC = () => {
 
-    const arr = Array.from({length: 9}, (_, i) => i + 1);
-    const [line, setLine] = useState(0)
-    const [open, setOpen] = useState(false);
+const SelectC = ({ line, handler }: { line: string, handler: (param: string) => void }) => {
+
+    // console.log(Object.values(LineCode), 'key')
+    const arr: LineCode[] = Object.values(LineCode);
+
+    const [open, setOpen] = useState<boolean>(false);
 
     return (
         <div className={styles?.['custom_select']}>
@@ -19,8 +22,7 @@ const SelectC = () => {
                         setOpen(prev => !prev);
                     }}
                     type='button'
-                    text={line > 0 ? `${line.toString()} 호선` : '호선을 선택해주세요.'}
-                    className={line === arr[line - 1] ? styles[`line_${line}`] : ''}
+                    text={line.length > 0 ? line : '호선을 선택해주세요.'}
                 />
             </div>
             <div className={styles?.['list_wrapper']}>
@@ -37,11 +39,11 @@ const SelectC = () => {
                             >
                                 <Buttonc
                                     onClick={() => {
-                                        setLine(item)
+                                        handler(item)
                                         setOpen(false)
                                     }}
                                     type='button'
-                                    text={`${item.toString()} 호선`}
+                                    text={item}
                                 />
                             </li>
                         )
