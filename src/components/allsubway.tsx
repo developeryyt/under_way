@@ -1,18 +1,12 @@
 'use client';
-// const results = await fetch(`${process.env.NEXT_PUBLIC_KRIC_API_ADDRESS}?serviceKey=${process.env.NEXT_PUBLIC_KRIC_API_KEY}&format=json&mreaWideCd=01&lnCd=${line}`, { cache: 'force-cache' });
+import {SubwayLine} from "@/types";
 
-// import axios from "axios";
+const AllSubway = ({ list }: { list: SubwayLine[] }) => {
 
-const AllSubway = () => {
-
-
-
-
-
+    console.log(list, 'list')
 
     return (
         <div>
-
         </div>
     );
 };

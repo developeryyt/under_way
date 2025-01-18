@@ -3,7 +3,7 @@ import Selectc from "@/components/form/selectc";
 import {useCallback, useEffect, useState} from "react";
 import AllSubway from "@/components/allsubway";
 import {LineCode, SubwayLine} from "@/types";
-import axios from "axios";
+
 
 export type Line = string;
 interface SubwayLineHeader {
@@ -12,8 +12,10 @@ interface SubwayLineHeader {
     resultMsg: string;
 }
 
-async function getData(line: [string, string][]): Promise<SubwayLine[] | undefined> {
+async function getData(line: [string, string][]): Promise<SubwayLine[]>{
+
     if(!line.length > 0) return;
+
     let str: string = ''
     switch(line[0][0]) {
         case 'S1':
@@ -35,7 +37,6 @@ async function getData(line: [string, string][]): Promise<SubwayLine[] | undefin
         if(header.resultCode !== '00') throw new Error(header.resultMsg)
 
         return body
-
     }catch(err) {
         if(err instanceof Error) throw new Error(err.message)
         throw err;
@@ -56,16 +57,25 @@ const Info = () => {
             setLine(param);
         }, [line]);
 
+    async function getSubwayLine() {
+        const result = await getData(Object.entries(LineCode).filter(item => item.includes(line)))
+
+        if(result.length > 0) {
+            setList(result)
+        }
+    }
+
     useEffect(() => {
-        const result = getData(Object.entries(LineCode).filter(item => item.includes(line)))
-        setList(result)
+        if(line) {
+            getSubwayLine()
+        }
     }, [line])
 
 
     return (
         <div>
             <Selectc line={line} handler={changeLineHandler}/>
-            {line.length > 0 && <AllSubway />}
+            {line.length > 0 && <AllSubway list={list} />}
         </div>
     );
 };
