@@ -1,0 +1,255 @@
+@import '@/styles/variables';
+
+.allsubway_wrapper {
+  height: calc(100% - 35px);
+  overflow-y: auto;
+
+  ul {
+    padding: 10px 0;
+
+
+
+
+    > li {
+      position: relative;
+      text-align: center;
+
+      span {
+        position: relative;
+        display: inline-block;
+        font-size: 1.07rem;
+        padding-bottom: 20px;
+        margin-bottom: 8px;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom:0;
+          width: 2px;
+          height: 50%;
+          transform: translateX(-50%);
+        }
+
+      }
+
+      &:last-child {
+
+        span {
+          padding-bottom: 0;
+          &::after {
+            content: none;
+          }
+        }
+      }
+    }
+
+    &.selected_1호선{
+      > li {
+        > span {
+          &::after {
+            background-color: $line1;
+          }
+        }
+      }
+    }
+    &.selected_2호선{
+      > li {
+        > span {
+          &::after {
+            background-color: $line2;
+          }
+        }
+      }
+    }
+    &.selected_3호선{
+      > li {
+        > span {
+          &::after {
+            background-color: $line3;
+          }
+        }
+      }
+    }
+    &.selected_4호선{
+      > li {
+        > span {
+          &::after {
+            background-color: $line4;
+          }
+        }
+      }
+    }
+    &.selected_5호선{
+      > li {
+        > span {
+          &::after {
+            background-color: $line5;
+          }
+        }
+      }
+    }
+    &.selected_6호선{
+      > li {
+        > span {
+          &::after {
+            background-color: $line6;
+          }
+        }
+      }
+    }
+    &.selected_7호선{
+      > li {
+        > span {
+          &::after {
+            background-color: $line7;
+          }
+        }
+      }
+    }
+    &.selected_8호선{
+      > li {
+        > span {
+          &::after {
+            background-color: $line8;
+          }
+        }
+      }
+    }
+    &.selected_9호선{
+      > li {
+        > span {
+          &::after {
+            background-color: $line9;
+          }
+        }
+      }
+    }
+    &.selected_신분당선{
+      > li {
+        > span {
+          &::after {
+            background-color: $lineD1;
+          }
+        }
+      }
+    }
+    &.selected_공항철도{
+      > li {
+        > span {
+          &::after {
+            background-color: $lineA1;
+          }
+        }
+      }
+    }
+    &.selected_용인에버라인{
+      > li {
+        > span {
+          &::after {
+            background-color: $lineE1;
+          }
+        }
+      }
+    }
+    &.selected_김포골드라인{
+      > li {
+        > span {
+          &::after {
+            background-color: $lineG1;
+          }
+        }
+      }
+    }
+    &.selected_인천1호선{
+      > li {
+        > span {
+          &::after {
+            background-color: $lineI1;
+          }
+        }
+      }
+    }
+    &.selected_인천2호선{
+      > li {
+        > span {
+          &::after {
+            background-color: $lineI2;
+          }
+        }
+      }
+    }
+    &.selected_수인분당{
+      > li {
+        > span {
+          &::after {
+            background-color: $lineK1;
+          }
+        }
+      }
+    }
+    &.selected_경춘{
+      > li {
+        > span {
+          &::after {
+            background-color: $lineK2;
+          }
+        }
+      }
+    }
+    &.selected_경의중앙{
+      > li {
+        > span {
+          &::after {
+            background-color: $lineK4;
+          }
+        }
+      }
+    }
+    &.selected_경강선{
+      > li {
+        > span {
+          &::after {
+            background-color: $lineK5;
+          }
+        }
+      }
+    }
+    &.selected_신림선{
+      > li {
+        > span {
+          &::after {
+            background-color: $lineL1;
+          }
+        }
+      }
+    }
+    &.selected_서해선{
+      > li {
+        > span {
+          &::after {
+            background-color: $lineWS;
+          }
+        }
+      }
+    }
+    &.selected_우이신설{
+      > li {
+        > span {
+          &::after {
+            background-color: $lineUI;
+          }
+        }
+      }
+    }
+    &.selected_의정부경전철{
+      > li {
+        > span {
+          &::after {
+            background-color: $lineU1;
+          }
+        }
+      }
+    }
+  }
+}

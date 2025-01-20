@@ -1,5 +1,5 @@
 import {SubwayLine} from "@/types";
-
+import styles from './allsubway.module.scss';
 
 
 
@@ -10,22 +10,21 @@ const AllSubway = ({ list }: { list: SubwayLine[] }) => {
     console.log('Client Components allSubway---allsubway.tsx@@@@')
 
     return (
-        <div style={{
-            height: `calc(100% - 35px)`,
-            overflowY: 'auto'
-        }}>
-            <ul>
+        <div className={styles['allsubway_wrapper']}>
+            <div></div>
+            <ul className={styles[`selected_${list[0]?.['routNm']}`]}>
                 {
                     list?.map((item, idx) => {
 
                         return (
                             <li key={`subwayCode_${idx}`}>
-                                {item?.['stinNm']}
+                                <span>{item?.['stinNm']}</span>
                             </li>
                         )
                     })
                 }
             </ul>
+            <div></div>
         </div>
     );
 };

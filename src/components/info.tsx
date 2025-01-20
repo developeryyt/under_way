@@ -1,6 +1,6 @@
 'use client';
 import Selectc from "@/components/form/selectc";
-import {useCallback, useEffect, useState} from "react";
+import {Suspense, useCallback, useEffect, useState} from "react";
 import AllSubway from "@/components/allsubway";
 import {LineCode, SubwayLine} from "@/types";
 
@@ -77,7 +77,9 @@ const Info = () => {
             height: '100%'
         }}>
             <Selectc line={line} handler={changeLineHandler}/>
-            {line.length > 0 && <AllSubway list={list} />}
+            <Suspense fallback={<div>Loading...</div>}>
+                {line.length > 0 && <AllSubway list={list} />}
+            </Suspense>
         </div>
     );
 };
