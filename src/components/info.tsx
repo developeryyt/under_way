@@ -12,7 +12,7 @@ interface SubwayLineHeader {
     resultMsg: string;
 }
 
-async function getData(line: [string, string][]): Promise<SubwayLine[]>{
+async function getData(line: [string, string][]): Promise<SubwayLine[] | undefined>{
 
     if(!line.length > 0) return;
 
@@ -73,7 +73,9 @@ const Info = () => {
 
 
     return (
-        <div>
+        <div style={{
+            height: '100%'
+        }}>
             <Selectc line={line} handler={changeLineHandler}/>
             {line.length > 0 && <AllSubway list={list} />}
         </div>

@@ -20,7 +20,9 @@ html, body {
 
 .layout.dark * {
     color: #f3f3f3 !important;
+    background-color: #323235;
 }
+
 
 .inner {
     height: 100%;

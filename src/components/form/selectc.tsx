@@ -12,6 +12,8 @@ const SelectC = ({ line, handler }: { line: string, handler: (param: string) => 
 
     const [open, setOpen] = useState<boolean>(false);
 
+    console.log(line, 'line')
+
     return (
         <div className={styles?.['custom_select']}>
             <div
@@ -23,6 +25,7 @@ const SelectC = ({ line, handler }: { line: string, handler: (param: string) => 
                     }}
                     type='button'
                     text={line.length > 0 ? line : '호선을 선택해주세요.'}
+                    className={styles[`selected_${line}`]}
                 />
             </div>
             <div className={styles?.['list_wrapper']}>

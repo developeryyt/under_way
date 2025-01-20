@@ -14,7 +14,7 @@
       text-align: center;
       color: $gray2;
 
-      &.line_1 { border-color: $line1; }
+
       &.line_2 { border-color: $line2; }
       &.line_3 { border-color: $line3; }
       &.line_4 { border-color: $line4; }
@@ -28,10 +28,12 @@
   }
 
   .list_wrapper {
+    z-index: 10;
     position: absolute;
     left: 0;
     top: 40px;
     width: 100%;
+    background-color: #fff;
   }
 
   ul.select_list {
@@ -59,3 +61,27 @@
   }
 }
 
+
+.selected_1호선 { border-color: $line1 !important; }
+.selected_2호선 { border-color: $line2 !important; }
+.selected_3호선 { border-color: $line3 !important; }
+.selected_4호선 { border-color: $line4 !important; }
+.selected_5호선 { border-color: $line5 !important; }
+.selected_6호선 { border-color: $line6 !important; }
+.selected_7호선 { border-color: $line7 !important; }
+.selected_8호선 { border-color: $line8 !important; }
+.selected_9호선 { border-color: $line9 !important; }
+.selected_신분당선 { border-color: $lineD1 !important; }
+.selected_공항철도 { border-color: $lineA1 !important; }
+.selected_용인에버라인 { border-color: $lineE1 !important; }
+.selected_김포골드라인 { border-color: $lineG1 !important; }
+.selected_인천1호선 { border-color: $lineI1 !important; }
+.selected_인천2호선 { border-color: $lineI2 !important; }
+.selected_수인분당 { border-color: $lineK1 !important; }
+.selected_경춘 { border-color: $lineK2 !important; }
+.selected_경의중앙 { border-color: $lineK4 !important; }
+.selected_경강선 { border-color: $lineK5 !important; }
+.selected_신림선 { border-color: $lineL1 !important; }
+.selected_서해선 { border-color: $lineWS !important; }
+.selected_우이신설 { border-color: $lineUI !important; }
+.selected_의정부경전철 { border-color: $lineU1 !important; }
