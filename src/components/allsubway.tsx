@@ -1,5 +1,6 @@
 import {SubwayLine} from "@/types";
 import styles from './allsubway.module.scss';
+import Positionsubway from "@/components/positionsubway";
 
 
 
@@ -11,7 +12,7 @@ const AllSubway = ({ list }: { list: SubwayLine[] }) => {
 
     return (
         <div className={styles['allsubway_wrapper']}>
-            <div></div>
+            <Positionsubway routeName={`${list[0]?.['routNm'].split('호선')[0]}호선`} />
             <ul className={styles[`selected_${list[0]?.['routNm']}`]}>
                 {
                     list?.map((item, idx) => {
@@ -24,7 +25,7 @@ const AllSubway = ({ list }: { list: SubwayLine[] }) => {
                     })
                 }
             </ul>
-            <div></div>
+
         </div>
     );
 };

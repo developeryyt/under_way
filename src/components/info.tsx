@@ -6,7 +6,7 @@ import {LineCode, SubwayLine} from "@/types";
 
 
 export type Line = string;
-interface SubwayLineHeader {
+export interface SubwayLineHeader {
     resultCnt: number;
     resultCode: string;
     resultMsg: string;

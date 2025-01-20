@@ -7,12 +7,8 @@ import {LineCode} from "@/types";
 
 const SelectC = ({ line, handler }: { line: string, handler: (param: string) => void }) => {
 
-    // console.log(Object.values(LineCode), 'key')
     const arr: LineCode[] = Object.values(LineCode);
-
     const [open, setOpen] = useState<boolean>(false);
-
-    console.log(line, 'line')
 
     return (
         <div className={styles?.['custom_select']}>
