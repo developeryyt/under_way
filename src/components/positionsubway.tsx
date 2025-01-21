@@ -30,7 +30,7 @@ const Positionsubway = ({ updown }: { updown: SubwayInfoPosition }) => {
         <div className={styles['subway_box']}>
             <div className={styles['subway_box_inner']}>
                 <div className={styles['main']}>
-                    <span className={styles['ttl']}>(종점: <b>{updown.statnTnm}역</b>행)</span>
+                    <span className={styles['ttl']}>(종점: <b>{updown.statnTnm}역</b>)</span>
                     <span className={styles['trainNo']}>열차번호: {updown.trainNo}</span>
                     <span className={styles['icon']}>
                         <IoMdTrain size={20} color={statusColor} />

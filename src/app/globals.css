@@ -19,7 +19,7 @@ html, body {
 }
 
 .layout.dark * {
-    color: #f3f3f3 !important;
+    color: #f3f3f3;
     background-color: #323235;
 }
 

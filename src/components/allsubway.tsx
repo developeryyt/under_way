@@ -67,7 +67,7 @@ const AllSubway = ({ list }: { list: SubwayLine[] }) => {
                                             })
                                         }
                                     </div>
-                                    <span style={{ whiteSpace: 'pre-wrap' }}>{str}</span>
+                                    <span className={styles['lineName']}>{str}</span>
                                     <div>
                                         {
                                             downLine.map((list, idx) => {

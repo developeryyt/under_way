@@ -24,3 +24,7 @@
     }
   }
 }
+
+:global(.dark) .icon path {
+  color: inherit;
+}

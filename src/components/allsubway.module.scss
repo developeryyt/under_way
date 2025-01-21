@@ -41,13 +41,15 @@
           z-index: 5;
         }
 
-        > span {
+        > .lineName {
           _border: 1px solid red;
           position: relative;
           z-index: 10;
           display: inline-block;
           font-size: 1.07rem;
           background-color: #fff;
+          white-space: pre-wrap;
+          transition: all 450ms;
         }
 
       }
@@ -273,4 +275,9 @@
       }
     }
   }
+}
+
+:global(.layout.dark) .allsubway_wrapper ul > li .inner .lineName {
+  background-color: #323235;
+
 }
