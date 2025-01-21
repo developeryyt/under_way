@@ -1,0 +1,26 @@
+.subway_box {
+  .subway_box_inner {
+
+    .main {
+      .ttl {
+        display: block;
+        font-size: 15px;
+      }
+
+      .trainNo {
+        display: block;
+        font-size: 12px;
+      }
+
+      .icon {
+        display: block;
+      }
+    }
+
+    .desc {
+      span {
+        font-size: 13px;
+      }
+    }
+  }
+}

@@ -53,25 +53,26 @@ const AllSubway = ({ list }: { list: SubwayLine[] }) => {
             <ul className={styles[`selected_${list[0]?.['routNm']}`]}>
                 {
                     list?.map((item, idx) => {
+                        let str = (item.stinNm).replace(/\(/g, "\n(");
                         return (
                             <li key={`subwayCode_${idx}`}>
                                 <div className={styles['inner']}>
                                     <div>
                                         {
-                                            upLine.map((list) => {
+                                            upLine.map((list, idx) => {
                                                 if(list.statnNm === item.stinNm) {
-                                                    return <Positionsubway key={list.trainNo} updown={list} />
+                                                    return <Positionsubway key={`train_up_${idx}`} updown={list} />
                                                 }
                                                 return null
                                             })
                                         }
                                     </div>
-                                    <span>{item?.['stinNm']}</span>
+                                    <span style={{ whiteSpace: 'pre-wrap' }}>{str}</span>
                                     <div>
                                         {
-                                            downLine.map((list) => {
+                                            downLine.map((list, idx) => {
                                                 if(list.statnNm === item.stinNm) {
-                                                    return <Positionsubway key={list.trainNo} updown={list} />
+                                                    return <Positionsubway key={`train_down_${idx}`} updown={list} />
                                                 }
                                                 return null
                                             })

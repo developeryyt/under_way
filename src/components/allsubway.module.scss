@@ -10,6 +10,14 @@
       position: relative;
       text-align: center;
 
+      &:first-child {
+        > .inner {
+          &::after {
+            height: 50%;
+          }
+        }
+      }
+
       .inner {
         position: relative;
         display: flex;
