@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 export async function promiseHandler(logics: object[]):  Promise<PromiseSettledResult<object>[]> {
     try {
         return await Promise.allSettled(logics)
@@ -10,8 +8,30 @@ export async function promiseHandler(logics: object[]):  Promise<PromiseSettledR
 }
 
 
-export function arrangeLineUpSide(item, condition) {
+export function arrangeLineUpSide(item: object, condition: unknown): boolean {
     return item.updnLine === condition
+}
+
+
+export function lineArrange(line: string): string {
+    let str = '';
+
+    switch(line) {
+        case '신분당':
+        case '수인분당':
+        case '경춘':
+        case '우이신설':
+            str = `${line}선`;
+            return str;
+
+        case '공항':
+            str = '공항철도';
+            return str;
+
+        default:
+            return line;
+    }
+
 }
 
 /*
