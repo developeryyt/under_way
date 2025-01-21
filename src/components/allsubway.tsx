@@ -1,6 +1,8 @@
+import {useEffect, useState} from "react";
 import {SubwayInfoPosition, SubwayLine} from "@/types";
 import styles from './allsubway.module.scss';
-import {useEffect} from "react";
+import _ from 'lodash';
+import {arrangeLineUpSide} from "@/util";
 
 
 function lineArrange(line: string): string {
@@ -28,8 +30,6 @@ function lineArrange(line: string): string {
 
 async function getPostion(route: string): Promise<SubwayInfoPosition[]> {
 
-
-
     try {
         const result = await fetch(`http://swopenapi.seoul.go.kr/api/subway/${process.env.NEXT_PUBLIC_OPENAPI_SUBWAY_KEY}/json/realtimePosition/0/100/${route}`)
         return result.json();
@@ -48,9 +48,16 @@ const AllSubway = ({ list }: { list: SubwayLine[] }) => {
     // console.log('Client Components allSubway---allsubway.tsx@@@@')
     const route: string = list[0]?.['routNm'];
 
+    const [lineInfo, setLineInfo] = useState<SubwayInfoPosition[]>([])
+    const [upLine, setUpLine] = useState<SubwayInfoPosition[]>([])
+    const [downLine, setDownLine] = useState<SubwayInfoPosition[]>([])
+
     async function getPositionLine() {
         const result = await getPostion(lineArrange(route));
-        console.log(result, '역 정보')
+
+        if(result?.errorMessage.status === 200 && result?.errorMessage.total > 0) {
+            setLineInfo(result?.realtimePositionList)
+        }
     }
 
     useEffect(() => {
@@ -58,6 +65,13 @@ const AllSubway = ({ list }: { list: SubwayLine[] }) => {
             getPositionLine()
         }
     }, [route])
+
+    useEffect(() => {
+        if(lineInfo.length > 0) {
+            setUpLine(_.filter(lineInfo, (item) => arrangeLineUpSide(item, '1')))
+            setDownLine(_.filter(lineInfo, (item) => arrangeLineUpSide(item, '0')))
+        }
+    }, [lineInfo]);
 
 
     return (

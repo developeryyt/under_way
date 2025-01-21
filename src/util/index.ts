@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export async function promiseHandler(logics: object[]):  Promise<PromiseSettledResult<object>[]> {
     try {
         return await Promise.allSettled(logics)
@@ -5,6 +7,11 @@ export async function promiseHandler(logics: object[]):  Promise<PromiseSettledR
         if(err instanceof Error) throw new Error(err.message)
         throw err;
     }
+}
+
+
+export function arrangeLineUpSide(item, condition) {
+    return item.updnLine === condition
 }
 
 /*
