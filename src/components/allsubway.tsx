@@ -32,8 +32,6 @@ const AllSubway = ({ list }: { list: SubwayLine[] }) => {
     async function getPositionLine() {
         const result = await getPostion(lineArrange(route));
 
-        // console.log(result, 'result check')
-
         if(result.errorMessage.status === 200 && result.errorMessage.total > 0) {
             setLineInfo(result.realtimePositionList)
         }

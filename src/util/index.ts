@@ -1,4 +1,4 @@
-import {Line} from "@/types";
+import {Line, SubwayInfoPosition} from "@/types";
 
 
 export async function promiseHandler(logics: object[]):  Promise<PromiseSettledResult<object>[]> {
@@ -11,7 +11,7 @@ export async function promiseHandler(logics: object[]):  Promise<PromiseSettledR
 }
 
 
-export function arrangeLineUpSide(item: Line, condition: unknown): boolean {
+export function arrangeLineUpSide(item: SubwayInfoPosition, condition: unknown): boolean {
     return item.updnLine === condition
 }
 
