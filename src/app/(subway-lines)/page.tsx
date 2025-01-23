@@ -16,8 +16,6 @@ import Info from "@/components/info";
 
 const page = () => {
 
-
-
     return (
         <>
             <Info />
