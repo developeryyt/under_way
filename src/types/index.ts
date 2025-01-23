@@ -72,6 +72,15 @@ export interface SubwayInfoPosition {
 }
 
 
+export interface MessageInfo {
+    code: string;
+    developerMessage: string;
+    link: string;
+    message: string;
+    status: number;
+    total: number;
+}
+
 /**
  * lnCd	선코드
  * mreaWideCd	권역코드
@@ -111,6 +120,11 @@ export enum LineCode {
     K2 = '경춘', // 경춘
     L1 = '신림선', //신림선
     UI = '우이신설', //우이신설
+}
+
+
+export type Line = {
+    [key: string]: string
 }
 
 /*

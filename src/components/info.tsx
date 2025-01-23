@@ -12,9 +12,9 @@ export interface SubwayLineHeader {
     resultMsg: string;
 }
 
-async function getData(line: [string, string][]): Promise<SubwayLine[] | undefined>{
+async function getData(line: [string, string][]): Promise<SubwayLine[] | []>{
 
-    if(!line.length > 0) return;
+    if(!line.length) return []
 
     let str: string = ''
     switch(line[0][0]) {

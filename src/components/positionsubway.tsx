@@ -5,8 +5,6 @@ import { IoMdTrain } from "react-icons/io";
 
 const Positionsubway = ({ updown }: { updown: SubwayInfoPosition }) => {
 
-
-    console.log(updown)
     let status: string = '';
     let statusColor: string = '';
 

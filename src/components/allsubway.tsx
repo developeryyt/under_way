@@ -1,13 +1,16 @@
 import {useEffect, useState} from "react";
-import {SubwayInfoPosition, SubwayLine} from "@/types";
+import {MessageInfo, SubwayInfoPosition, SubwayLine} from "@/types";
 import styles from './allsubway.module.scss';
 import _ from 'lodash';
 import {arrangeLineUpSide, lineArrange} from "@/util";
 import Positionsubway from "@/components/positionsubway";
 
+interface Sub {
+    errorMessage: MessageInfo;
+    realtimePositionList: SubwayInfoPosition[];
+}
 
-
-async function getPostion(route: string): Promise<SubwayInfoPosition[]> {
+async function getPostion(route: string): Promise<Sub> {
     try {
         const result = await fetch(`http://swopenapi.seoul.go.kr/api/subway/${process.env.NEXT_PUBLIC_OPENAPI_SUBWAY_KEY}/json/realtimePosition/0/100/${route}`)
         return result.json();
@@ -29,8 +32,10 @@ const AllSubway = ({ list }: { list: SubwayLine[] }) => {
     async function getPositionLine() {
         const result = await getPostion(lineArrange(route));
 
-        if(result?.errorMessage.status === 200 && result?.errorMessage.total > 0) {
-            setLineInfo(result?.realtimePositionList)
+        // console.log(result, 'result check')
+
+        if(result.errorMessage.status === 200 && result.errorMessage.total > 0) {
+            setLineInfo(result.realtimePositionList)
         }
     }
 
@@ -53,7 +58,7 @@ const AllSubway = ({ list }: { list: SubwayLine[] }) => {
             <ul className={styles[`selected_${list[0]?.['routNm']}`]}>
                 {
                     list?.map((item, idx) => {
-                        let str = (item.stinNm).replace(/\(/g, "\n(");
+                        const str: string = (item.stinNm).replace(/\(/g, "\n(");
                         return (
                             <li key={`subwayCode_${idx}`}>
                                 <div className={styles['inner']}>
